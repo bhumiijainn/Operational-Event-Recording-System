@@ -48,6 +48,47 @@ The application provides a centralized interface for creating events, storing ev
 - VS Code
 - Uvicorn
 
+#Installation
+
+Open the terminal in the project directory and navigate to the backend:
+
+cd "module -3\backend"
+
+Activate the virtual environment:
+
+..\venv\Scripts\Activate.ps1
+
+Install the required dependencies:
+
+pip install -r requirements.txt
+Run the Application
+
+Start the FastAPI server using:
+
+python -m uvicorn main:app --reload
+
+After the server starts successfully, open:
+
+http://127.0.0.1:8000/
+
+
+
+#API Documentation
+
+FastAPI automatically provides interactive API documentation.
+
+Swagger UI:
+
+http://127.0.0.1:8000/docs
+
+ReDoc:
+
+http://127.0.0.1:8000/redoc
+
+Health check:
+
+http://127.0.0.1:8000/health
+
 ## 🏗️ System Architecture
 
 The application follows a simple full-stack architecture:
@@ -70,3 +111,5 @@ SQLAlchemy ORM
  │
  ▼
 SQLite Database
+
+
