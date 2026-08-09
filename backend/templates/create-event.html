@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Event | Digital Logbook</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>Digital Logbook</h2>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="/">
+                        <i class="fas fa-chart-line"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="/create">
+                        <i class="fas fa-plus-circle"></i>
+                        Create Event
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/history">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        Event History
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <h1>Operational Event Recording</h1>
+
+            <div class="profile">
+
+                <span>Bhumi Jain</span>
+
+            </div>
+
+        </header>
+
+        <!-- Create Event Card -->
+
+        <section class="card">
+
+            <h2>Create New Event</h2>
+
+            <form id="eventForm">
+
+                <!-- ================= Row 1 ================= -->
+
+                <div class="form-row">
+
+                    <!-- Event Title -->
+
+                    <div class="form-group">
+
+                        <label for="title">
+
+                            Event Title
+
+                        </label>
+
+                        <div class="voice-input">
+
+                            <input
+                                type="text"
+                                id="title"
+                                required
+                                placeholder="Enter Event Title">
+
+                            <button
+                                type="button"
+                                class="mic-btn"
+                                onclick="startVoiceInput('title')">
+
+                                🎤
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Event Type -->
+
+                    <div class="form-group">
+
+                        <label for="eventType">
+
+                            Event Type
+
+                        </label>
+
+                        <select
+                            id="eventType"
+                            required>
+
+                            <option value="">
+
+                                Select Event Type
+
+                            </option>
+
+                            <option value="Routine">
+
+                                Routine
+
+                            </option>
+
+                            <option value="Maintenance">
+
+                                Maintenance
+
+                            </option>
+
+                            <option value="Emergency">
+
+                                Emergency
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Priority -->
+
+                    <div class="form-group">
+
+                        <label for="priority">
+
+                            Priority
+
+                        </label>
+
+                        <select
+                            id="priority"
+                            required>
+
+                            <option value="">
+
+                                Select Priority
+
+                            </option>
+
+                            <option value="Low">
+
+                                Low
+
+                            </option>
+
+                            <option value="Medium">
+
+                                Medium
+
+                            </option>
+
+                            <option value="High">
+
+                                High
+
+                            </option>
+
+                            <option value="Critical">
+
+                                Critical
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Row 2 Starts ================= -->
+                                 <div class="form-row">
+
+                    <!-- Equipment -->
+
+                    <div class="form-group">
+
+                        <label for="equipment">
+
+                            Equipment
+
+                        </label>
+
+                        <div class="voice-input">
+
+                            <input
+                                type="text"
+                                id="equipment"
+                                required
+                                placeholder="Enter Equipment Name">
+
+                            <button
+                                type="button"
+                                class="mic-btn"
+                                onclick="startVoiceInput('equipment')">
+
+                                🎤
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Department -->
+
+                    <div class="form-group">
+
+                        <label for="department">
+
+                            Department
+
+                        </label>
+
+                        <select
+                            id="department"
+                            required>
+
+                            <option value="">
+                                Select Department
+                            </option>
+
+                            <option value="Production">
+                                Production
+                            </option>
+
+                            <option value="Maintenance">
+                                Maintenance
+                            </option>
+
+                            <option value="Electrical">
+                                Electrical
+                            </option>
+
+                            <option value="Mechanical">
+                                Mechanical
+                            </option>
+
+                            <option value="Safety">
+                                Safety
+                            </option>
+
+                            <option value="Utilities">
+                                Utilities
+                            </option>
+
+                            <option value="Operations">
+                                Operations
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Location -->
+
+                    <div class="form-group">
+
+                        <label for="location">
+
+                            Location
+
+                        </label>
+
+                        <div class="voice-input">
+
+                            <input
+                                type="text"
+                                id="location"
+                                required
+                                placeholder="Enter Location">
+
+                            <button
+                                type="button"
+                                class="mic-btn"
+                                onclick="startVoiceInput('location')">
+
+                                🎤
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Row 3 ================= -->
+
+                <div class="form-row">
+
+                    <!-- Shift -->
+
+                    <div class="form-group">
+
+                        <label for="shift">
+
+                            Shift
+
+                        </label>
+
+                        <select
+                            id="shift"
+                            required>
+
+                            <option value="">
+                                Select Shift
+                            </option>
+
+                            <option value="Morning">
+                                Morning
+                            </option>
+
+                            <option value="Evening">
+                                Evening
+                            </option>
+
+                            <option value="Night">
+                                Night
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Status -->
+
+                    <div class="form-group">
+
+                        <label for="status">
+
+                            Status
+
+                        </label>
+
+                        <select
+                            id="status"
+                            required>
+
+                            <option value="">
+                                Select Status
+                            </option>
+
+                            <option value="Open">
+                                Open
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Resolved">
+                                Resolved
+                            </option>
+
+                            <option value="Closed">
+                                Closed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Date -->
+
+                    <div class="form-group">
+
+                        <label for="date">
+
+                            Date
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Row 4 ================= -->
+
+                <div class="form-row">
+
+                    <!-- Time -->
+
+                    <div class="form-group">
+
+                        <label for="time">
+
+                            Time
+
+                        </label>
+
+                        <input
+                            type="time"
+                            id="time"
+                            required>
+
+                    </div>
+
+                    <!-- Reported By -->
+
+                    <div class="form-group">
+
+                        <label for="reportedBy">
+
+                            Reported By
+
+                        </label>
+
+                        <div class="voice-input">
+
+                            <input
+                                type="text"
+                                id="reportedBy"
+                                required
+                                placeholder="Reporter Name">
+
+                            <button
+                                type="button"
+                                class="mic-btn"
+                                onclick="startVoiceInput('reportedBy')">
+
+                                🎤
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Image Upload -->
+
+                    <div class="form-group">
+
+                        <label for="attachment">
+
+                            Attach Image
+
+                        </label>
+
+                        <input
+                            type="file"
+                            id="attachment"
+                            accept="image/png,image/jpeg,image/jpg,image/webp"
+                            onchange="previewImage(event)">
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Row 5 Starts ================= -->
+                                 <div class="form-row">
+
+                    <!-- Description -->
+
+                    <div class="form-group full-width">
+
+                        <label for="description">
+
+                            Event Description
+
+                        </label>
+
+                        <div class="voice-input">
+
+                            <textarea
+                                id="description"
+                                rows="6"
+                                required
+                                placeholder="Describe the operational event..."></textarea>
+
+                            <button
+                                type="button"
+                                class="mic-btn"
+                                onclick="startVoiceInput('description')">
+
+                                🎤
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Image Preview ================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group full-width">
+
+                        <label>
+
+                            Image Preview
+
+                        </label>
+
+                        <div class="image-preview-container">
+
+                            <img
+                                id="imagePreview"
+                                src=""
+                                alt="Image Preview"
+                                style="
+                                    display:none;
+                                    max-width:350px;
+                                    max-height:250px;
+                                    border-radius:10px;
+                                    border:1px solid #dcdcdc;
+                                    padding:5px;
+                                ">
+
+                            <p id="noImageText">
+
+                                No Image Selected
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Buttons ================= -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        <i class="fas fa-floppy-disk"></i>
+
+                        Create Event
+
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="reset-btn">
+
+                        <i class="fas fa-rotate-left"></i>
+
+                        Reset
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        onclick="window.location.href='/history'">
+
+                        <i class="fas fa-arrow-left"></i>
+
+                        Back
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- ================= Image Preview Script ================= -->
+
+    <script>
+
+        function previewImage(event) {
+
+            const file = event.target.files[0];
+
+            const preview = document.getElementById("imagePreview");
+
+            const noImage = document.getElementById("noImageText");
+
+            if (!file) {
+
+                preview.style.display = "none";
+
+                preview.src = "";
+
+                noImage.style.display = "block";
+
+                return;
+
+            }
+
+            preview.src = URL.createObjectURL(file);
+
+            preview.style.display = "block";
+
+            noImage.style.display = "none";
+
+        }
+
+    </script>
+
+    <!-- ================= Part 4 Contains External Scripts ================= -->
+    <!-- ================= JavaScript Files ================= -->
+
+    <script src="/static/js/storage.js"></script>
+
+    <script src="/static/js/event.js"></script>
+
+    <script src="/static/js/voice.js"></script>
+
+</body>
+
+</html>

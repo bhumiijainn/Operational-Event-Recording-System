@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Event Details | Digital Logbook</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <div class="sidebar">
+
+        <h2>Digital Logbook</h2>
+
+        <ul>
+
+            <li>
+
+                <a href="/">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/create">
+
+                    <i class="fa-solid fa-plus-circle"></i>
+
+                    Create Event
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="/history">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Event History
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- ================= Main ================= -->
+
+    <div class="main">
+
+        <header>
+
+            <div>
+
+                <h1>Operational Event Details</h1>
+
+                <p>Complete information of the selected operational event.</p>
+
+            </div>
+
+            <div class="user">
+
+                <i class="fa-solid fa-user-circle"></i>
+
+                <strong>Bhumi Jain</strong>
+
+            </div>
+
+        </header>
+
+        <!-- ================= Details Card ================= -->
+
+        <div class="details-container">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Event Information
+
+            </h2>
+                        <!-- Row 1 -->
+
+            <div class="details-row">
+
+                <div class="detail-card">
+
+                    <label>Event ID</label>
+
+                    <span id="eventId">-</span>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <label>Event Title</label>
+
+                    <span id="title">-</span>
+
+                </div>
+
+            </div>
+
+            <!-- Row 2 -->
+
+            <div class="details-row">
+
+                <div class="detail-card">
+
+                    <label>Event Type</label>
+
+                    <span id="eventType">-</span>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <label>Priority</label>
+
+                    <span id="priority">-</span>
+
+                </div>
+
+            </div>
+
+            <!-- Row 3 -->
+
+            <div class="details-row">
+
+                <div class="detail-card">
+
+                    <label>Status</label>
+
+                    <span id="status">-</span>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <label>Department</label>
+
+                    <span id="department">-</span>
+
+                </div>
+
+            </div>
+
+            <!-- Row 4 -->
+
+            <div class="details-row">
+
+                <div class="detail-card">
+
+                    <label>Equipment</label>
+
+                    <span id="equipment">-</span>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <label>Location</label>
+
+                    <span id="location">-</span>
+
+                </div>
+
+            </div>
+                        <!-- Row 5 -->
+
+            <div class="details-row">
+
+                <div class="detail-card">
+
+                    <label>Shift</label>
+
+                    <span id="shift">-</span>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <label>Reported By</label>
+
+                    <span id="reportedBy">-</span>
+
+                </div>
+
+            </div>
+
+            <!-- Row 6 -->
+
+            <div class="details-row">
+
+                <div class="detail-card">
+
+                    <label>Date</label>
+
+                    <span id="date">-</span>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <label>Time</label>
+
+                    <span id="time">-</span>
+
+                </div>
+
+            </div>
+
+            <!-- Row 7 -->
+
+            <div class="details-row">
+
+                <div class="detail-card full-width">
+
+                    <label>Description</label>
+
+                    <p id="description">
+
+                        -
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Row 8 -->
+
+            <div class="details-row">
+
+                <div class="detail-card">
+
+                    <label>Attachment</label>
+
+                    <span id="attachment">
+
+                        No Attachment
+
+                    </span>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <label>Created At</label>
+
+                    <span id="createdTime">-</span>
+
+                </div>
+
+            </div>
+
+            <!-- Action Buttons -->
+
+            <div class="details-actions">
+
+                <a
+                    href="/history"
+                    class="back-btn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back
+
+                </a>
+
+                <a
+                    id="editButton"
+                    href="#"
+                    class="edit-btn">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Edit Event
+
+                </a>
+
+            </div>
+
+        </div>
+            </div>
+
+    <!-- ================= JavaScript ================= -->
+
+    <script src="/static/js/storage.js"></script>
+
+    <script src="/static/js/details.js"></script>
+
+    <!-- Automatically update Edit button -->
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+
+        const eventId = params.get("id");
+
+        if (eventId) {
+
+            document.getElementById("editButton").href =
+                `/edit-event?id=${eventId}`;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

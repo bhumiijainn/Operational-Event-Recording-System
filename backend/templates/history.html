@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event History | Digital Logbook</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <div class="sidebar">
+
+        <h2>Digital Logbook</h2>
+
+        <ul>
+
+            <li>
+
+                <a href="/">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/create">
+
+                    <i class="fa-solid fa-plus-circle"></i>
+
+                    Create Event
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="/history">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Event History
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- ================= Main ================= -->
+
+    <div class="main">
+
+        <header>
+
+            <div>
+
+                <h1>Operational Event History</h1>
+
+                <p>View and manage all operational events</p>
+
+            </div>
+
+            <div class="user">
+
+                <i class="fa-solid fa-user-circle"></i>
+
+                <strong>Bhumi Jain</strong>
+
+            </div>
+
+        </header>
+
+        <!-- ================= Search ================= -->
+
+        <div class="form-container">
+
+            <h2>Search Events</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by Event ID, Title, Department or Equipment...">
+
+        </div>
+
+        <!-- ================= Event Table ================= -->
+
+        <div class="table-container">
+
+            <table id="eventTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Event ID</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Priority</th>
+                        <th>Department</th>
+                        <th>Shift</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="eventBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- ================= JavaScript ================= -->
+
+    <script src="/static/js/storage.js"></script>
+    <script src="/static/js/history.js"></script>
+
+</body>
+
+</html>

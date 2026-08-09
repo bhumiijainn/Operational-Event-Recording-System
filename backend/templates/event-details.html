@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details | Digital Logbook</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Digital Logbook</h2>
+            <p>Module 3 - Operational Event Recording</p>
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="create-event.html">
+                        <i class="fa-solid fa-plus-circle"></i>
+                        Create Event
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="history.html">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Event History
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main-content">
+
+        <header>
+
+            <div>
+
+                <h1>Event Details</h1>
+
+                <p>View complete operational event information</p>
+
+            </div>
+
+            <div class="profile">
+
+                <i class="fa-solid fa-user-circle"></i>
+
+                <strong>Bhumi Jain</strong>
+
+            </div>
+
+        </header>
+
+        <!-- ================= Buttons ================= -->
+
+        <div class="deatils-actions">
+
+            <a href="history.html" class="btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back
+            </a>
+
+
+
+        </div>
+
+        <!-- ================= Event Card ================= -->
+
+        <section class="form-container">
+
+            <h2>Operational Event Information</h2>
+
+            <div class="details-grid">
+
+                <div class="detail-box">
+                    <label>Event ID</label>
+                    <p id="eventId">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Title</label>
+                    <p id="title">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Event Type</label>
+                    <p id="eventType">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Priority</label>
+                    <p id="priority">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Status</label>
+                    <p id="status">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Department</label>
+                    <p id="department">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Equipment</label>
+                    <p id="equipment">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Location</label>
+                    <p id="location">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Shift</label>
+                    <p id="shift">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Reported By</label>
+                    <p id="reportedBy">Bhumi Jain</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Date</label>
+                    <p id="date">-</p>
+                </div>
+
+                <div class="detail-box">
+                    <label>Time</label>
+                    <p id="time">-</p>
+                </div>
+
+            </div>
+
+            <div class="description-box">
+
+                <h3>Description</h3>
+
+                <p id="description">
+
+                    No Description Available
+
+                </p>
+
+            </div>
+
+            <div class="attachment-box">
+
+                <h3>Attachment</h3>
+
+                <p id="attachment">
+
+                    No Attachment Uploaded
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Timeline ================= -->
+
+        <section class="form-container">
+
+            <h2>Event Timeline</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+
+                        <h4>Event Created</h4>
+
+                        <p id="createdTime">
+
+                            Waiting...
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/details.js"></script>
+
+</body>
+
+</html>

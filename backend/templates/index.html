@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Logbook System</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Digital Logbook</h2>
+
+    <ul>
+
+        <li><a href="/"><i class="fa fa-home"></i> Dashboard</a></li>
+
+        <li><a href="/create"><i class="fa fa-plus-circle"></i> Create Event</a></li>
+
+        <li><a href="/history"><i class="fa fa-table"></i> Event History</a></li>
+
+    </ul>
+
+</div>
+
+<div class="main">
+
+<header>
+
+<h1>Operational Event Recording</h1>
+
+<div class="user">
+
+<i class="fa fa-user-circle"></i>
+
+Bhumi Jain
+
+</div>
+
+</header>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Events</h3>
+
+<p id="totalEvents">0</p>
+</div>
+
+<div class="card emergency">
+
+<h3>Emergency</h3>
+
+<p id="emergencyCount">0</p>
+
+</div>
+
+<div class="card maintenance">
+
+<h3>Maintenance</h3>
+
+<p id="maintenanceCount">0</p>
+</div>
+
+<div class="card routine">
+
+<h3>Routine</h3>
+
+<p id="routineCount">0</p>
+
+</div>
+
+</div>
+
+
+<div class="table-section">
+<!-- ================= Dashboard Charts ================= -->
+
+<div class="charts-grid">
+
+    <div class="chart-card">
+
+        <h3>Events by Type</h3>
+
+        <canvas id="typeChart"></canvas>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h3>Priority Distribution</h3>
+
+        <canvas id="priorityChart"></canvas>
+
+    </div>
+
+</div>    
+
+<h2>Recent Events</h2>
+
+<table>
+
+<tr>
+
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Title</th>
+
+<th>Type</th>
+
+<th>Priority</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="recentEvents">
+
+</tbody>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="/static/js/storage.js"></script>
+<script src="/static/js/dashboard.js"></script>
+</body>
+
+</html>
