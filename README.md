@@ -89,6 +89,26 @@ Health check:
 
 http://127.0.0.1:8000/health
 
+## Screenshots
+
+### 1. Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+The dashboard provides an overview of recorded operational events with total event counts, event-type distribution, priority distribution, and recently recorded events.
+
+### 2. Create Event
+
+![Create Event](screenshots/create-event.png)
+
+The Create Event page allows users to record operational events with details such as event type, priority, equipment, department, location, shift, status, date, time, reporter, description, and image attachment. Voice-assisted input is also available for supported fields.
+
+### 3. Event History
+
+![Event History](screenshots/event-history.png)
+
+The Event History page provides a searchable list of recorded events and supports viewing, editing, and deleting individual records.
+
 ## 🏗️ System Architecture
 
 The application follows a simple full-stack architecture:
